@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    
+    <title>Document</title>
+</head>
+
+
+
+<body>
+  <div class="container">
+    <h1 contenteditable="true" style="width: 100px;">KEEP ME NOTED</h1>
+    {% if current_user.is_authenticated %}
+    <li style="list-style:none; margin-right:3rem;">
+      <a href="{{ url_for('logout') }}" class="nav-link px-2 ">Atsijungti</a>
+    </li>
+    {% else %}
+    {%endif%}
+
+    <div class="content-section;  p-3; mx-auto pt-5" style="text-align: center; max-width: 30%;">
+    {% include "flash.html" %}
+    </div>
+
+    <div class="container d-flex justify-content-start  mb-3 flex-wrap" >
+        {% for category in categories %}  
+        <div class="btn btn-secondary" id= "category.id "style="margin: 0.3rem  0.3rem  0rem  0rem; ">                                      
+        
+        <a href="{{ url_for('notes' , id = category.id )}}" style="margin: 0.3rem  0.3rem  0rem  0rem; width:10rem; 
+                          height: 5rem; word-wrap: break-word; text-decoration: none;">
+            <h6 style="padding: 0.5rem; color: aliceblue; " >{{category['category_name']}}</h6>  
+        </a>
+      
+        <div style="display: flex; justify-content: center;">
+          <a  href="{{ url_for('delete' , id = category.id) }}" class="nav-link px-2 ">
+            <i class="bi bi-trash3-fill"></i>
+          </a>
+          <a href="{{ url_for('edit_category' , id = category.id )}}" class="nav-link px-2 ">
+            <i class="bi bi-pen-fill"></i>
+          </a>
+          <a href="{{ url_for('add_note' , id = category.id )}}" class="nav-link px-2 ">
+            <i class="bi bi-file-earmark-plus"></i>
+          </a>
+        </div>
+        <!-- <input type="color" id="colorpicker" onchange="changeBackground(this.value)" >
+        <script>
+          function changeBackground(value){
+              document.querySelector('.container')
+              .style.background=value
+          }
+        </script> -->
+
+        </div>  
+        {% endfor %}
+      </div>
+
+      <div style=" padding: 0rem  0.7rem" >
+          <a class="btn btn-primary" href="{{ url_for('add_category')}}" class="nav-link px-2 ">Add Category!!</a>
+      </div>
+        {% block content %}
+        {% endblock %}
+   </div>
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+   integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+   </script>
+    
+</body>
+</html>
+

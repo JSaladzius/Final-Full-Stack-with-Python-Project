@@ -1,0 +1,67 @@
+{%extends "main.html"%}
+{%block content%}
+<div class="content-section; w-50 p-3; mx-auto pt-5" >
+    <form method="POST" action="" enctype="multipart/form-data">
+       {{ form.hidden_tag() }}
+       <fieldset class="form-group">
+           <legend class="border-bottom mb-4">Add Note</legend>
+           <div class="form-group">
+                {{ form.name.label(class="form-control-label") }}
+                {% if form.name.errors %}
+                {{ form.name(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                {% for error in form.name.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+                </div>
+                {% else %}
+                {{ form.name(class="form-control form-control-lg") }}
+                {% endif %}
+           </div>
+
+           <div class="form-group">
+                {{ form.text.label(class="form-control-label") }}
+                {% if form.text.errors %}
+                {{ form.text(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                {% for error in form.text.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+                </div>
+                {% else %}
+                {{ form.text(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            
+            <div class="form-group">
+                 {{ form.picture.label(class="form-control-label") }}
+                 {% if form.picture.errors %}
+                 {{ form.picture(class="form-control form-control-lg is-invalid") }}
+                 <div class="invalid-feedback">
+                 {% for error in form.picture.errors %}
+                 <span>{{ error }}</span>
+                 {% endfor %}
+                 </div>
+                 {% else %}
+                 {{ form.picture(class="form-control form-control-lg") }}
+                 {% endif %}
+             </div>
+
+
+
+
+
+
+
+
+
+
+           <br>
+       </fieldset>
+             <br>
+       <div class="form-group" style="margin-bottom: 2rem;">
+          {{ form.submit(class="btn btn-outline-primary") }}
+       </div>
+    </form>
+</div>
+{%endblock content%}

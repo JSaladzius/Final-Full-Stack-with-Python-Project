@@ -32,3 +32,8 @@ class AddNoteForm(FlaskForm):
     text = StringField("Text", [DataRequired()])
     picture = FileField('Add Picture', validators=[FileAllowed(['jpg', 'png'])])
     submit = SubmitField('Post')
+
+
+class SearchForm(FlaskForm):
+    searched = StringField("Searched", [DataRequired()])
+    submit = SubmitField('Submit')

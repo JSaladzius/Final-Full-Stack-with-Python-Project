@@ -74,10 +74,11 @@ def delete(id):
     try:
         db.session.delete(category)
         db.session.commit()
-        return redirect(url_for('main'))
+        flash("Category deleted")
+        return redirect(url_for('all_notes'))
     except:
         flash("NOPE, not deleted")
-        return redirect(url_for('main'))
+        return redirect(url_for('all_notes'))
     
 
 @app.route('/edit/<int:id>', methods =['GET' , 'POST'])
@@ -107,7 +108,7 @@ def add_category():
         db.session.add(category)
         db.session.commit()
         print('Category added')
-        return redirect(url_for('main'))
+        return redirect(url_for('all_notes'))
     return render_template ("addCategory.html",form=form , categories=categories)
 
 
@@ -190,7 +191,7 @@ def noting(id):
         db.session.add(note)
         db.session.commit()
         flash('Note added')
-        return redirect(url_for('main'))
+        return redirect(url_for('all_notes'))
 
         
 
@@ -269,7 +270,7 @@ def edit_note(id):
         db.session.add(note)
         db.session.commit()
         flash('note updated!!!!')
-        return redirect(url_for('main'))
+        return redirect(url_for('all_notes'))
     form.name.data = note.name
     form.text.data = note.text
     form.picture.data = note.picture
@@ -289,10 +290,10 @@ def delete_note(id):
         db.session.delete(note)
         db.session.commit()
         flash("Note , deleted")
-        return redirect(url_for('main'))
+        return redirect(url_for('all_notes'))
     except:
         flash("NOPE, not deleted")
-        return redirect(url_for('main'))
+        return redirect(url_for('all_notes'))
     
 
 

@@ -1,18 +1,19 @@
 
 {% extends "main.html" %}
 {% block content %}
-<div class="container d-flex justify-content-start  mb-3 flex-wrap" >
+<div class="all-notes">
     {% for note in notes %}  
-    <div class="btn btn-secondary" id= "category.id "style="margin: 0.3rem  0.3rem  0rem  0rem; ">                                      
+    <div class="btn btn-primary"  id="note-container" >                                      
     
-    <a href="" style="margin: 0.3rem  0.3rem  0rem  0rem; width:50rem; 
-                      height: 5rem; word-wrap: break-word; text-decoration: none;">
-        <h4 style="padding: 0.5rem; color: aliceblue; " >{{note['name']}}</h4>  
-        <h6 style="padding: 0.5rem; color: aliceblue; " >{{note['text']}}</h6>  
-    </a>
+        <a href="" style="margin: 0.3rem  0.3rem  0rem  0rem; width:50rem; 
+                          height: 5rem; word-wrap: break-word; text-decoration: none;">
+
+            <h5 style="padding: 0.2rem; color: rgb(39, 39, 39); " >{{note['name']}}</h5>  
+            <p style="padding: 0.2rem; margin: 0px; color: rgb(39, 39, 39); " >{{note['text']}}</p>  
+        </a>
+
     {% if note.picture %}
-    <div style="border: 5px solid rgb(182, 182, 182);">
-        <!-- <img style="width: 10rem; height: 6rem;" src="{{ url_for('static' , filename='images/default.png')}}" alt="deafault_image"> -->
+    <div id="image-container" >
         <img src="{{ url_for('static', filename='images/' + note.picture) }}" alt="deafault_image" style="width: 10rem; height: 6rem;" >
     </div>
     {% endif %}   

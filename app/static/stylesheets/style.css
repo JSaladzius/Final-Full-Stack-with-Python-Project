@@ -1,0 +1,137 @@
+body{
+    background-color: rgb(88, 88, 88);
+}
+
+
+#brand_flash_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 0rem;
+    padding-top: 1rem;
+}
+
+#brand,
+#flash{
+    margin: 0.5rem 3%;
+
+}
+
+#brand{
+    padding: 2rem 1rem;
+    border: 2px solid cyan;
+    /* box-shadow: 0 0 10px 1px gray inset; */
+    text-shadow: 1px 1px  10px  rgba(73, 213, 231, 0.836);
+}
+
+
+
+#signout-container{
+    display: flex; 
+    justify-content: space-between;
+    padding: 0.5rem;
+    padding-right: 1rem;
+    padding-bottom: 0;  
+}
+
+
+#signout, #add_category {
+    height:2.5rem;
+}
+
+
+#add_category{
+    border-radius: 0%;
+    border-color: cyan;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    box-shadow:0px 0px 10px 0px  rgb(105, 105, 105) inset;
+}
+
+#container-1{
+    background-color: rgb(255, 255, 255);
+    padding-right: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 10rem;
+    padding-left: 3rem;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    border-radius: 5rem;
+    /* border: 2px solid black; */
+    box-shadow: 0 0 100px 1px inset;
+    margin-top: 3rem;
+    margin-bottom: 10rem;
+
+}
+
+.all-cards-container{
+    /* background-color: bisque; */
+}
+
+.all-notes{
+    padding: 0.5rem;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#container-category{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    padding: 0.5rem;
+}
+
+#buttons-category{
+    margin: 0.3rem  0.3rem  0rem  0rem; 
+    width:31% ;
+
+    border-radius: 0%;
+    border-color: cyan;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    box-shadow:0px 0px 10px 0px  rgba(0, 255, 255, 0.37) inset;
+}
+
+#category-name{
+    padding: 0.5rem; 
+    color: rgb(17, 17, 17); 
+}
+
+
+.note-filter-container{
+    display: flex;
+    padding: 0rem  0.7rem;
+    margin-top: 2rem;
+    height: 2.5rem;
+}
+
+#serach-by-name{
+    width: 8.5rem;  
+    border-radius: 5px;
+    margin-left: 0.5rem;
+    
+}
+
+#all-notes-filter{
+    border-radius: 0%;
+    border-color: cyan;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    box-shadow:0px 0px 10px 0px  rgb(70, 70, 70) inset;
+}
+
+#note-container{
+    border-radius: 0%;
+    border-color: cyan;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    box-shadow:0px 0px 10px 0px  rgba(0, 255, 255, 0.37) inset;
+    margin: 0.3rem  0.3rem  0rem  0rem;
+    
+}
+
+#image-container{
+    
+}

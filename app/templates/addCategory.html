@@ -4,19 +4,19 @@
 <div class="content-section; w-50 p-3; mx-auto pt-5" >
     <form method="POST" action="">
        {{ form.hidden_tag() }}
-       <fieldset class="form-group">
+       <fieldset id="fieldset-add-category" class="form-group">
            <legend class="border-bottom mb-4">Add category</legend>
            <div class="form-group">
                 {{ form.name.label(class="form-control-label") }}
                 {% if form.name.errors %}
-                {{ form.name(class="form-control form-control-lg is-invalid") }}
+                {{ form.name(class="form-control form-control-lg is-invalid" , style="text-transform: uppercase;") }}
                 <div class="invalid-feedback">
                 {% for error in form.name.errors %}
                 <span>{{ error }}</span>
                 {% endfor %}
                 </div>
                 {% else %}
-                {{ form.name(class="form-control form-control-lg") }}
+                {{ form.name(class="form-control form-control-lg" , style="text-transform: uppercase;") }}
                 {% endif %}
            </div>
            <br>

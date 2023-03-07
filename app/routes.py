@@ -19,7 +19,7 @@ def load_user(user_id):
 @app.route("/", methods=['GET','POST'])
 def home():
     form = LoginForm()
-    return render_template("base.html", title="LOG iN", form=form)
+    return render_template("login.html", title="LOG iN", form=form)
 
 
 @app.route("/login" , methods=['GET','POST'])
@@ -30,7 +30,8 @@ def log_in():
     if request.method == 'POST' and form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
         if user and bcrypt.check_password_hash(user.password, form.password.data):
-            login_user(user)
+            login_user(user, remember=form.remember.data)
+            flash("Loged in successfully")
             return redirect(url_for('main'))
         else:
             flash('No luck. Check email or password', 'warning')
@@ -136,17 +137,6 @@ def all_notes():
                              categories=categories)
 
 
-
-
-
-
-# @app.route('/display/<filename>')
-# @login_required
-# def display_image(filename):
-#     print('display_image filename: ' + filename)
-#     return redirect(url_for('static', filename='images/' + filename), code=301)
-
-
 def save_picture(form_picture):
     random_hex = secrets.token_hex(8)
     _, f_ext = os.path.splitext(form_picture.filename)
@@ -162,6 +152,7 @@ def save_picture(form_picture):
 
 
 @app.route('/noting/<int:id>' , methods=['GET', 'POST'])
+@login_required
 def noting(id):
 
     category= Category.query.filter_by(id=id).first()
@@ -305,6 +296,7 @@ def base():
 
 
 @app.route('/search', methods=["POST"])
+@login_required
 def search():
     categories = Category.query.all()
     form = SearchForm()

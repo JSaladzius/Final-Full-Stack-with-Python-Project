@@ -1,0 +1,26 @@
+#login-button,
+#submit{
+    background-color: rgb(238, 238, 238) ; 
+    box-shadow:0 0 5px 0  cyan inset;
+}
+
+#reg-button{
+    color:rgb(4, 164, 196);
+    text-decoration: none;
+}
+
+#submit {
+    margin-top: 0.7rem;
+}
+
+#login-register-container{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    flex-wrap: wrap; 
+}
+
+
+
+
+

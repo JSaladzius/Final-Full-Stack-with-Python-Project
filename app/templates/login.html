@@ -2,10 +2,10 @@
     prisijungus yra sukreipiamas į groups puslapį. -->
 {% extends "base.html" %}
 {% block content %}
-<div class="content-section; w-25 p-3; mx-auto pt-5" >
+<div class="content-section; w-25 p-3; mx-auto" >
   <form method="POST" action="">
     {{ form.hidden_tag() }}
-    <fieldset class="form-group">
+    <fieldset id="fieldset" class="form-group">
         <legend class="border-bottom mb-4">LOG IN</legend>
         <div class="form-group">
             {{ form.email.label(class="form-control-label") }}
@@ -34,16 +34,15 @@
             {% endif %}
         </div>
         <br>
-        <div class="form-check">
+        <div class="form-check" >
             {{ form.remember(class="form-check-input") }}
             {{ form.remember.label(class="form-check-label") }}
         </div>
     </fieldset>
-    <br>
-    <div class="form-group" style="display: inline-block">
-        {{ form.submit(class="btn btn-outline-primary") }} 
+    <div id="login-register-container" class="form-group" >
+        {{ form.submit(class="btn btn-btn-secondary" , id="login-button") }} 
         <small class="text-muted ml-2">
-            <a href="{{ url_for('register') }}" style="color:rgb(2, 52, 252) ; margin-left: 10rem; text-decoration: none;" > REGISTER</a>
+            <a id="reg-button" href="{{ url_for('register') }}"> REGISTER</a>
         </small>
     </div>
 </form>

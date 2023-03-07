@@ -3,11 +3,11 @@
 
 {% extends "base.html" %}
 {% block content %}
-<div class="content-section; w-50 p-3; mx-auto pt-5">
+<div id="content-section" class="content-section; w-50 p-3; mx-auto">
     <form method="POST" action="">
         {{ form.hidden_tag() }}
-        <fieldset class="form-group">
-            <legend " >CREATE ACCOUNT</legend>
+        <fieldset id="fieldset-register" class="form-group">
+            <legend>CREATE ACCOUNT</legend>
             <br><br>
             <div class=" form-group">
                 {{ form.name.label(class="form-control-label") }}
@@ -62,11 +62,9 @@
     {{ form.repeated_password(class="form-control form-control-lg")}}
     {% endif %}
 </div>
+  {{ form.submit (class="btn btn-btn-secondary" ) }}
 </fieldset>
-<div class="form-group">
-    <br>
-    {{ form.submit (class="btn btn-outline-primary" ) }}
-</div>
+
 </form>
 
 <div class="content-section;  p-3; mx-auto pt-5" style="text-align: center; max-width: 30%;">

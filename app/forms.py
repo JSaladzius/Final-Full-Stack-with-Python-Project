@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
-from wtforms import StringField , PasswordField, BooleanField, SubmitField, IntegerField
+from wtforms import StringField , PasswordField, BooleanField, SubmitField, IntegerField ,TextAreaField
 from wtforms.validators import DataRequired, Email, EqualTo, ValidationError, Length
 from app.db_models.User import User
 
@@ -29,7 +29,7 @@ class AddCategoryForm(FlaskForm):
 
 class AddNoteForm(FlaskForm):
     name = StringField("Name", [DataRequired()])
-    text = StringField("Text", [DataRequired()])
+    text = TextAreaField("Text", [DataRequired()])
     picture = FileField('Add Picture', validators=[FileAllowed(['jpg', 'png'])])
     submit = SubmitField('Post')
 

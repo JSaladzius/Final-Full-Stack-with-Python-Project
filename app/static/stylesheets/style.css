@@ -1,5 +1,6 @@
 body{
     background-color: rgb(88, 88, 88);
+    margin: auto;
 }
 
 
@@ -22,6 +23,16 @@ body{
     border: 2px solid cyan;
     /* box-shadow: 0 0 10px 1px gray inset; */
     text-shadow: 1px 1px  10px  rgba(73, 213, 231, 0.836);
+}
+
+#flash{
+    
+    padding: 0.5rem; 
+    border:1px solid rgb(82, 206, 255); 
+    max-width: 20rem;
+    text-align: center;
+    align-self: center;
+    
 }
 
 
@@ -60,14 +71,12 @@ body{
     border-radius: 5rem;
     /* border: 2px solid black; */
     box-shadow: 0 0 100px 1px inset;
-    margin-top: 3rem;
-    margin-bottom: 10rem;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    min-width: 256px;
 
 }
 
-.all-cards-container{
-    /* background-color: bisque; */
-}
 
 .all-notes{
     padding: 0.5rem;
@@ -86,12 +95,15 @@ body{
 #buttons-category{
     margin: 0.3rem  0.3rem  0rem  0rem; 
     width:31% ;
-
     border-radius: 0%;
     border-color: cyan;
     background-color: rgb(255, 255, 255);
     color: black;
     box-shadow:0px 0px 10px 0px  rgba(0, 255, 255, 0.37) inset;
+    display: flex;
+    flex-direction: column;
+   
+
 }
 
 #category-name{
@@ -129,9 +141,63 @@ body{
     color: black;
     box-shadow:0px 0px 10px 0px  rgba(0, 255, 255, 0.37) inset;
     margin: 0.3rem  0.3rem  0rem  0rem;
+    display: flex;
+    flex-direction: column;
+    
     
 }
 
 #image-container{
+    border: 1px solid rgba(0, 234, 255, 0.639);
+
     
 }
+
+
+#note-fill-container{
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+
+#note-fill-container2{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+    max-width: 40rem;
+}
+
+#note-name{
+    padding: 0.2rem;
+    color: rgb(39, 39, 39); 
+}
+
+#note-text{
+    align-self: flex-start;
+    max-width: 40rem;
+    word-wrap:break-word;
+    white-space: pre-wrap;
+}
+
+
+input:-webkit-autofill {
+    border: none !important;
+    -webkit-text-fill-color: rgb(30, 30, 30) !important;
+    background-color: rgb(238, 238, 238) !important;
+    -webkit-box-shadow:0 0 5px 1px rgba(0, 255, 255, 0.465) inset;
+    transition: background-color 5000s ease-in-out 0s;
+    }
+ input:autofill{
+    background: none;
+ }
+
+
+#submit{
+    background-color: rgb(238, 238, 238) ; 
+    box-shadow:0 0 5px 0  cyan inset;
+    border: 1px solid cyan;
+    color: rgb(42, 42, 42);
+    
+}
+ 

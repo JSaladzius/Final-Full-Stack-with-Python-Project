@@ -1,0 +1,133 @@
+
+
+
+
+@media only screen and (max-width: 995px) {
+
+    #fieldset,
+    #fieldset-register,
+    #fieldset-add-category,
+    #fieldset-edit-category,
+    #fieldset-edit-note,
+    #fieldset-add-note{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #email,
+    #password,
+    #name,
+    #repeated_password {
+        width: 13rem;
+    }
+
+    #flash {
+        font-size: small;
+    }
+
+
+    #login-register-container {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+    #content-section {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        padding-top: none;
+    }
+
+    #brand-container {
+        margin: auto;
+    }
+    #text,
+    #picture,
+    #edit-note-name,
+    #add-note-name{
+        width:385px ;
+    }
+
+}
+
+@media only screen and (max-width: 575px) {
+
+    #container-1 {
+        padding: 0 0.5rem 4rem 0.5rem;    
+    }
+
+    #brand_flash_container{
+        padding-bottom: 1rem;
+    }
+
+    #email,
+    #password,
+    #name,
+    #repeated_password {
+        width: 11rem;
+        font-size: large;
+        
+    }
+    #edit-note-name{
+        width: 385px;
+    }
+
+    #brand{
+        font-size:x-large;
+    }
+
+    #buttons-category{
+        width:100% ;
+        height: 5rem;
+    }
+    
+    #buttons-category a{
+       font-size: medium;
+    }
+
+    #all-notes-filter{
+        font-size: small;
+        line-height:13px ;
+        /* padding-top: 0.5rem; */
+       
+        
+    }
+    #note-filter-container{
+        text-align: center;
+    }
+    #search-by-name{
+        width:1rem ;
+    }
+    #text,
+    #picture,
+    #edit-note-name,
+    #add-note-name{
+        
+        font-size: medium;
+    }
+
+}
+
+
+@media only screen and (max-width: 420px) {
+    #text,
+    #picture,
+    #edit-note-name,
+    #add-note-name{
+        width:176px ;
+
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

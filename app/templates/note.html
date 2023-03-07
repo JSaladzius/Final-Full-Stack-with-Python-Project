@@ -5,22 +5,21 @@
     {% for note in notes %}  
 
 
-    <div class="btn btn-primary"  id="note-container" >   
-
+    <div class="btn btn-primary"  id="note-container" >                                      
       <div id = "note-fill-container" >
-        <div id = "note-fill-container2">
-           {#<a href="" style="height: 5rem; word-wrap: break-word; text-decoration: none;">
-          </a>#}
-             <h5 id="note-name" style="text-transform: uppercase;">{{note['name']}}</h5>  
-  
-              <p id="note-text" style="padding: 0.2rem; margin: 0px; color: rgb(39, 39, 39); " >{{note['text']}}</p>      
-        </div>
-        {% if note.picture %}
-        <div id="image-container" >
-            <img id="img" src="{{ url_for('static', filename='images/' + note.picture) }}" alt="deafault_image" >
-        </div>
-        {% endif %}
-     </div>   
+      <div id = "note-fill-container2">
+        {#<a href="" style="margin: 0.3rem  0.3rem  0rem  0rem; width:50rem; 
+                          height: 5rem; word-wrap: break-word; text-decoration: none;">#}
+
+            <h5 id="note-name"" >{{note['name']}}</h5>  
+            <p id="note-text" style="padding: 0.2rem; margin: 0px; color: rgb(39, 39, 39); " >{{note['text']}}</p>      
+      </div>
+      {% if note.picture %}
+      <div id="image-container" >
+          <img src="{{ url_for('static', filename='images/' + note.picture) }}" alt="deafault_image" style="width: 10rem; height: 6rem;" >
+      </div>
+      {% endif %}
+    </div>   
 
 
 
